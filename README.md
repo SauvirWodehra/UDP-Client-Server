@@ -79,3 +79,20 @@ g++ -std=c++17 server.cpp -o server
 
 # Compile client
 g++ -std=c++17 client.cpp -o client
+
+# Terminal 1: start server (listens on port 9000 by default)
+./server
+
+# Terminal 2: run client (connects to server IP and port)
+./client 127.0.0.1 9000 "Hello from client"
+
+# Compile (MinGW)
+g++ -std=c++17 server.cpp -o server.exe -lws2_32
+g++ -std=c++17 client.cpp -o client.exe -lws2_32
+
+# Start server
+.\server.exe
+
+# Run client
+.\client.exe 127.0.0.1 9000 "Hello from client"
+
